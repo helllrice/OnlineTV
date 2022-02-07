@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;800;700&display=swap');
+
+
+$white: #fff;
+$bg-gradient: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%);
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    // font-family: 'Marcellus', serif;
+    font-family: 'Mulish', sans-serif;
+}
+
+.container {
+    max-width: 144rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 144rem;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    &-item {
+        margin: 0 1.5rem;
+    }
+    &-link {
+        text-decoration: none;
+        font-weight: 700;
+        color: rgba($white, 0.5);
+        transition: 0.2s ease color;
+        &:hover {
+        color: rgba($white, 1);
+        }
+        &::after {
+            content: '';
+            opacity: 0;
+            display: block;
+            width: 100%;
+            height: .2rem;
+            margin-top: .5rem;
+            background: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%);
+            border-radius: 5rem;
+        }
+        &.active {
+            color: rgba($white, 1);
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+.control {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    &-item {
+        margin-left: 7.5rem;
+    }
+    &-btn {
+        background-color: transparent;
+        border: none;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &_search {
+            background-image: url(images/search.svg);
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        &_notice {
+            background-image: url(images/notice.svg);
+            width: 2.13rem;
+            height: 2.35rem;
+        }
+        &_account {
+            background-image: url(images/account.svg);
+            width: 1.8rem;
+            height: 1.92rem;
+        }
+    }
+}
+
+.section-banner {
+    border-bottom: .1rem solid #2f2e2e;
+    position: relative;
+    overflow: hidden;
+    &__img {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.banner {
+    max-width: 56.2rem;
+    padding-top: 12.2rem;
+    padding-bottom: 14rem;
+    background-color: #000;
+    box-shadow: 100px 0px 100px #000000;
+    &__title {
+        font-family: 'Marcellus', serif;
+        font-size: 8rem;
+        line-height: 7.5rem;
+    }
+    &__text {
+        color: #c2c2c2;
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+    &-info {
+        font-weight: 800;
+        margin-bottom: 2.9rem;
+        &__year {
+            margin-right: 1.8rem;
+        }
+        &__age {
+            margin-right: 1.8rem;
+            position: relative;
+            width: 6rem;
+            display: inline-block;
+            text-align: center;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2.4rem;
+                background-image: url(images/age.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: calc(50% - 1.2rem);
+                left: 0;
+                right: 0;
+                
+            }
+        }
+        &__rating {
+            margin-right: 1.8rem;
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 1.6rem;
+                height: 1.6rem;
+                background-image: url(images/star.svg);
+                margin-left: 1rem;
+            }
+        }
+        &__time {
+            margin-right: 6.1rem;
+        }
+    }
+    &-control {
+        margin-top: 3.1rem;
+        &__btn {
+            background-color: transparent;
+            border: none;
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        &__btn-main {
+            background: $bg-gradient;
+            color: $white;
+            position: relative;
+            padding-left: 6rem;
+            margin-right: 3rem;
+            box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
+            transition: .2s ease box-shadow;
+            &:hover {
+                box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 1.4rem;
+                height: 1.8rem;
+                background-image: url(images/play.svg);
+                position: absolute;
+                left: 3rem;
+                top: calc(50% - .9rem)
+            }
+        }
+        &__btn-more {
+            background-color: $white;
+            color: #323232;
+        }
+    }
+}
+
+.section_h2 {
+    padding-top: 6.8rem;
+    &__link {
+        padding-left: 1.5rem;
+       text-decoration: none;
+       color: $white;
+       font-size: 2.8rem; 
+       line-height: 2rem;
+       position: relative;
+       &::before {
+           content: '';
+           display: block;
+           width: .8rem;
+           height: 3.5rem;
+           border-radius: 5rem;
+           background: $bg-gradient;
+           position: absolute;
+           left: 0;
+           top: calc(50% - 1.7rem);
+    
+       }
+    }
+    .movies {
+        padding-top: 4.8rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.see-more_btn {
+    margin-top: 5.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 10rem;
+    padding: 1.5rem 3rem;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 800;
+    cursor: pointer;   
+    background: $bg-gradient;
+    color: $white;
+    box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
+    transition: .2s ease box-shadow;
+    &:hover {
+        box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
+    }
+}
+
+.genres__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 4.7rem;
+    &__romance {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__drama {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__historical  {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__action  {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__scifi  {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%);
+        img {
+            padding-top: 2rem;
+        }
+    }
+    &__horror   {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__comedy  {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+    &__documentary  {
+        margin-bottom: 2.5rem;
+        width: 34rem;
+        height: 19.8rem;
+        border-radius: 2rem;
+        background: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%);
+        img {
+            padding-top: 5.5rem;
+        }
+    }
+}
+
+.actors {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    &__item {
+        padding-top: 4.4rem;
+        h2 {
+            font-size: 18px;
+        }
+    }
+}
+
+.next-film {
+    max-width: 100%;
+    padding-top: 5rem;
+    align-items: center;
+    img {
+        width: 100%;
+    }
+}
+
+.register {
+    max-width: 122.4rem;
+    max-height: 27rem;
+    background: url(images/posters/background.png);
+    margin: 12.1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__text {
+        padding: 7.1rem 5.7rem;
+        max-width: 60rem;
+        font-family: 'Mulish', sans-serif;
+        font-size: 5rem;
+    }
+    &__btn {
+        margin-right: 15.2rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 10rem;
+        padding: 1.5rem 3rem;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 800;
+        cursor: pointer;   
+        background: $bg-gradient;
+        color: $white;
+        box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
+        transition: .2s ease box-shadow;
+        &:hover {
+            box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
+        }
+    }
+}
+
+footer {
+    background-color:#101012;
+    padding: 7rem 0 4rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 144rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0 auto;
+    &-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        &__item {
+            margin-bottom: 2rem;
+        }
+        &__link {
+            font-size: 1.8rem;
+            color: #c2c2c2;
+            text-decoration: none;
+            font-weight: 600;
+        }   
+    }
+}
