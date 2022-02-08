@@ -4,6 +4,12 @@
 $white: #fff;
 $bg-gradient: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%);
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 10px;
 }
@@ -83,6 +89,7 @@ body {
         display: block;
         background-size: cover;
         background-repeat: no-repeat;
+        cursor: pointer;
         &_search {
             background-image: url(images/search.svg);
             width: 1.8rem;
@@ -115,7 +122,7 @@ body {
 .banner {
     max-width: 56.2rem;
     padding-top: 12.2rem;
-    padding-bottom: 14rem;
+    padding-bottom: 9rem;
     background-color: #000;
     box-shadow: 100px 0px 100px #000000;
     &__title {
@@ -232,13 +239,23 @@ body {
     
        }
     }
-    .movies {
-        padding-top: 4.8rem;
-        display: flex;
-        justify-content: space-between;
+.movies {
+    padding-top: 4.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &-item {
+        padding: 10px;
+        }
+        &__img {
+            border-radius: 5%;
+            }
     }
 }
 
+
+
+    
 .see-more_btn {
     margin-top: 5.5rem;
     background-color: transparent;
@@ -254,6 +271,12 @@ body {
     transition: .2s ease box-shadow;
     &:hover {
         box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .see-more_btn {
+        text-align: center;
     }
 }
 
@@ -429,5 +452,60 @@ footer {
             text-decoration: none;
             font-weight: 600;
         }   
+    }
+}
+
+@media (max-width:575.98px) {
+    
+    .nav {
+        display: none;
+    }
+    
+    .control {
+        &-item {
+            margin-left: 4.5rem;
+        }
+    }
+    
+    .section-banner {
+        .container {
+            padding-right: 0;
+        }
+        &__img {
+            width: 100%;
+            opacity: 0.2;
+            background-repeat: no-repeat;
+        }
+    }
+    
+    .banner {
+        background-color: transparent;
+        &__title {
+            font-size: 6.2rem;
+        }
+        &__text {
+            padding-top: 1rem;
+        }
+    }
+    
+    .genres__item {
+        justify-content: center;
+    }
+    
+    .register {
+        &__text {
+            font-size: 2rem;
+        }
+        &__btn {
+            margin-right: 5.1rem;
+            padding: 1rem 5rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+    .movies {
+        justify-content: flex-start;
     }
 }
