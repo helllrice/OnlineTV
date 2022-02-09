@@ -4,8 +4,15 @@ const gulpSass = require('gulp-sass')(require('sass'));
 const CleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const del = require('del');
-const browserSync = require('browser-sync').create()
+const browserSync = require('browser-sync').create();
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const replace = require('gulp-replace');
 
+function images() {
+    return gulp.src('src/images/**/*')
+    .pipe(gulp.dest('dist/images'))
+}
 
 function clean() {
     return del('dist')
@@ -45,7 +52,14 @@ function watch() {
     
     gulp.watch("./src/sass/**/*.scss", scss)
     gulp.watch("./src/**/*.pug", puggy);
-    gulp.watch("dist/*html").on('change', browserSync.reload);
+    gulp.watch("./src/images/**/*", images);
+    gulp.watch("dist/*.html").on('change', browserSync.reload);
 }
 
-exports.default = gulp.series(clean, puggy, scss, script, watch)
+function svgSpriteBuild () {
+	return gulp.src('src/images/**/*')
+		.pipe(replace('&gt;', '>'))
+		.pipe(gulp.dest('dist/images'));
+};
+
+exports.default = gulp.series(clean, puggy, scss, script, images, svgSpriteBuild, watch)
