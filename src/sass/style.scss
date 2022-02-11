@@ -452,6 +452,7 @@ footer {
     }
     
     .control {
+        display: none;
         padding-top: 30px;
         &-item {
             width: 1.2rem;
@@ -472,8 +473,12 @@ footer {
     }
     
     .banner {
+        font-size: 1.6rem;
         padding: 1.2rem;
         background-color: transparent;
+        &-info__time {
+            margin-right: 3rem;
+        }
         &__title {
             font-size: 4.2rem;
         }
