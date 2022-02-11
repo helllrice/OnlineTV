@@ -1,1 +1,1 @@
-console.log("hello");
+window.onload=function(){let e=document.getElementById("preload");e.style.display="none"};
