@@ -32,6 +32,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 144rem;
     align-items: center;
     margin: 0 auto;
@@ -137,7 +138,7 @@ body {
                 display: block;
                 width: 100%;
                 height: 2.4rem;
-                background-image: url("images/age.svg");
+                background-image: url("../images/age.svg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 position: absolute;
@@ -154,7 +155,7 @@ body {
                 display: inline-block;
                 width: 1.6rem;
                 height: 1.6rem;
-                background-image: url(images/star.svg);
+                background-image: url("../images/star.svg");
                 margin-left: 1rem;
             }
         }
@@ -189,7 +190,7 @@ body {
                 display: block;
                 width: 1.4rem;
                 height: 1.8rem;
-                background-image: url(images/play.svg);
+                background-image: url("../images/play.svg");
                 position: absolute;
                 left: 3rem;
                 top: calc(50% - .9rem)
@@ -360,6 +361,7 @@ body {
     flex-wrap: wrap;
     &__item {
         padding-top: 4.4rem;
+        padding-left: 2rem;
         h2 {
             font-size: 18px;
         }
@@ -386,12 +388,10 @@ body {
     
     &__text {
         padding: 7.1rem 5.7rem;
-        max-width: 60rem;
         font-family: 'Mulish', sans-serif;
         font-size: 5rem;
     }
     &__btn {
-        margin-right: 15.2rem;
         background-color: transparent;
         border: none;
         border-radius: 10rem;
@@ -440,15 +440,23 @@ footer {
     }
 }
 
-@media (max-width:575.98px) {
+@media screen and (max-width:575.98px) {
+    .header {
+        min-width: 100%;
+        justify-content: center;
+    }
+    
     
     .nav {
         display: none;
     }
     
     .control {
+        padding-top: 30px;
         &-item {
-            margin-left: 4.5rem;
+            width: 1.2rem;
+            height: 1.2rem;
+
         }
     }
     
@@ -464,13 +472,18 @@ footer {
     }
     
     .banner {
+        padding: 1.2rem;
         background-color: transparent;
         &__title {
-            font-size: 6.2rem;
+            font-size: 4.2rem;
         }
         &__text {
             padding-top: 1rem;
         }
+    }
+    
+    .banner-control__btn {
+        margin: .4rem;
     }
     
     .genres__item {
@@ -480,18 +493,36 @@ footer {
     
     .register {
         &__text {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
         &__btn {
-            margin-right: 5.1rem;
-            padding: 1rem 5rem;
-            font-size: 1.2rem;
+            margin-right: 4rem;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
         }
     }
+    
+    .movies {
+        justify-content: center !important;
+    }
+    
+    .actors {
+        justify-content: center
+    }
+    
+    
+    footer {
+        padding-top: 2rem !important;
+        .footer {
+            &__item:first-child {
+                margin: 0 auto;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+    
 }
 
 @media (min-width:768px) and (max-width:991.98px) {
-    .movies {
-        justify-content: flex-start;
-    }
+    
 }

@@ -86,9 +86,9 @@ function watch() {
     
     gulp.watch("./src/images/**/*.svg", svgSpriteBuild)
     gulp.watch("./src/sass/**/*.scss", scss)
-    gulp.watch("./src/**/*.pug", puggy);
-    gulp.watch("./src/images/**/*", images);
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
+    gulp.watch("./src/**/*.pug", puggy)
+    gulp.watch("./src/images/**/*", images)
+    gulp.watch("dist/*.html").on('change', browserSync.reload)
 }
 
 
