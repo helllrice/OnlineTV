@@ -84,6 +84,8 @@ function watch() {
 		online: true
     });
     
+    
+    gulp.watch("./src/js/**/*.js", script)
     gulp.watch("./src/images/**/*.svg", svgSpriteBuild)
     gulp.watch("./src/sass/**/*.scss", scss)
     gulp.watch("./src/**/*.pug", puggy)

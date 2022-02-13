@@ -1,1 +1,1 @@
-window.onload=function(){let e=document.getElementById("preload");e.style.display="none"};
+const btnRegister=document.getElementById("register-btn");function openModal(e){const t=document.createElement("div");t.classList.add("modal"),document.querySelector("header").append(t)}window.onload=function(){let e=document.getElementById("preload");e.style.display="none"},btnRegister.addEventListener("click",openModal);
