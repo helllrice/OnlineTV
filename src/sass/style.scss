@@ -67,6 +67,7 @@ body {
 }
 
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -478,9 +479,73 @@ footer {
 }
 
 .modal {
-    width: 100rem;
-    height: 10rem;
-    background-color: #fff;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 50rem;
+    height: 65rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    border: 1px solid rgb(40,208,245);
+    border-radius: 1rem;
+    .close-btn {
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #c2c2c2;
+        border: none;
+        font-size: 24px;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .register-text {
+        text-align: center;
+    }
+    .form {
+        padding-top: 5rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        input {
+            width: 35rem;
+            height: 5rem;
+            margin: 15px;
+            background-color: #333333;
+            border: none;
+            border-radius: .4rem;
+        }
+    }
+    
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        .register-create {
+            background-color: transparent;
+            border: none;
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 800;
+            cursor: pointer;   
+            background: $bg-gradient;
+            color: $white;
+            box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
+            transition: .2s ease box-shadow;
+            &:hover {
+                box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5);
+            }
+        }
+        .register-enter {
+            background-color: #fff;
+            border: none;
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+    }
+    
 }
 
 @media screen and (max-width:575.98px) {
