@@ -478,8 +478,9 @@ footer {
     }
 }
 
-.modal {
-    position: absolute;
+.popup {
+    display: none;
+    position: fixed;
     top: 15%;
     left: 35%;
     width: 50rem;
@@ -500,11 +501,14 @@ footer {
         text-align: center;
     }
     .form {
-        padding-top: 5rem;
+        padding-top: 1rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        .register-form__text {
+            font-size: 2rem;
+        }
         input {
             width: 35rem;
             height: 5rem;

@@ -1,45 +1,27 @@
 const btnRegister = document.getElementById('register-btn')
+const popup = document.getElementById('popup')
+const closeBtn = document.getElementById('close-btn')
+const singUp = document.getElementById('sing-up')
+const formItems = document.querySelectorAll('.form__item')
 
 window.onload = function () {
     let preloader = document.getElementById('preload')
     preloader.style.display = 'none'
 }
 
-btnRegister.addEventListener('click', openModal, {once: true})
+btnRegister.addEventListener('click', openModal)
+closeBtn.addEventListener('click', closeModal)
+singUp.addEventListener('click', entrance)
 
 function openModal(e) {
-   const div = document.createElement('div')
-   div.classList.add('modal')
-   document.querySelector('header').append(div)
-   div.innerHTML = `
-        <button class="close-btn">X</button>
-        <h2 class="register-text">Registration</h2>
-        <div class="form">
-            <div class="form__item">
-                <h2 class="register-form__text">Your E-mail</h2>
-                <input type="text">
-            </div>
-            <div class="form__item">
-                <h2 class="form__item-text">Your Login</h2>
-                <input type="text">
-            </div>
-            <div class="form__item">
-                <h2 class="form__item-text">Your Password</h2>
-                <input type="text">
-            </div>
-            <div class="form__item">
-                <h2 class="form__item-text">Сonfirm Password</h2>
-                <input type="text">
-            </div>
-            <div class="form-buttons">
-                <button class="register-create">Create Account</button>
-                <button class="register-enter">Sign In</button>
-            </div>
-        </div>
-   `
+   popup.style.display = 'block'
 }
 
 function closeModal(e) {
+    popup.style.display = 'none'
+}
+
+function entrance (e) {
     
 }
 
