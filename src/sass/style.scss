@@ -497,7 +497,11 @@ footer {
         padding: 1rem;
         cursor: pointer;
     }
-    .register-text {
+    &-title__register {
+        text-align: center;
+    }
+    &-title__login {
+        display: none;
         text-align: center;
     }
     .form {
